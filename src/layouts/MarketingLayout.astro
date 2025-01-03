@@ -1,0 +1,10 @@
+---
+import BaseLayout from "./BaseLayout.astro"
+const { showBgGradient = "true" } = Astro.props
+---
+
+<BaseLayout>
+	<main class:list={["min-h-screen", { ["gradient-52"]: showBgGradient }]}>
+		<slot />
+	</main>
+</BaseLayout>
