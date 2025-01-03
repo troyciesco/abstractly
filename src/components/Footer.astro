@@ -7,8 +7,8 @@ const siteLinks = [
 		href: "/features"
 	},
 	{
-		text: "Pricing",
-		href: "/pricing"
+		text: "Library",
+		href: "/library"
 	},
 	{
 		text: "About us",
@@ -30,21 +30,28 @@ const socialLinks = [
 ---
 
 <footer class="flex flex-col items-center py-24">
-	<ul class="flex items-center gap-6 mb-8 text-muted">
+	<ul class="text-muted flex gap-6 items-center mb-8">
 		{
 			siteLinks.map((link) => (
 				<li>
-					<a href={link.href}>{link.text}</a>
+					<a
+						href={link.href}
+						class="hover:underline hover:text-dark transition-colors">
+						{link.text}
+					</a>
 				</li>
 			))
 		}
 	</ul>
-	<ul class="flex items-center gap-6 mb-4">
+	<ul class="flex gap-6 items-center mb-4">
 		{
 			socialLinks.map((link) => (
 				<li>
 					<a href={link.href}>
-						<Icon class="text-xl" name={link.icon} />
+						<Icon
+							class="text-neutral-400 hover:text-neutral-600 text-xl transition-colors"
+							name={link.icon}
+						/>
 					</a>
 				</li>
 			))

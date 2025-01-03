@@ -19,6 +19,10 @@
 	--color-muted: oklch(0.439 0 0); /* neutral-600 */
 }
 
+@utility container {
+	@apply w-full max-w-7xl mx-auto px-8;
+}
+
 @utility gradient-52 {
 	@apply -bg-linear-52 from-[#D2D6DB] to-[#F9FAFB];
 }

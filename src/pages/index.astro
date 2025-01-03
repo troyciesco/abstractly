@@ -1,20 +1,30 @@
 ---
+import FeatureGrid from "../components/FeatureGrid.astro"
 import Footer from "../components/Footer.astro"
+import Hero from "../components/Hero.astro"
 import Navbar from "../components/Navbar.astro"
+import Sheet from "../components/Sheet.astro"
 import MarketingLayout from "../layouts/MarketingLayout.astro"
+import { gridFeatures } from "../lib/grid-features"
 ---
 
 <MarketingLayout>
 	<div>
 		<Navbar />
-		<main class="flex flex-col justify-center items-center min-h-screen">
-			<h1>Abstractly</h1>
-			<p>Coming Soon.</p>
-			<p>
-				In the meantime, check out the
-				<a class="font-bold underline" href="/library">component library</a>.
-			</p>
-		</main>
-		<Footer />
+		<Sheet>
+			<main class="min-h-screen">
+				<Hero
+					title="Well-crafted abstract images"
+					description="High quality abstract images for your projects, wallpaper and presentations."
+				/>
+				<FeatureGrid
+					eyebrow="Premium abstract images"
+					title="Easy access to top-quality images"
+					description="In a world where storytelling constantly evolves, we lead with groundbreaking images designed for your presentation excellence."
+					features={gridFeatures}
+				/>
+			</main>
+			<Footer />
+		</Sheet>
 	</div>
 </MarketingLayout>
