@@ -1,6 +1,6 @@
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react"
 
-export function SgMenu({ menuButtonX = "right", menuButtonY = "top" }) {
+export function LibraryMenu({ menuButtonX = "right", menuButtonY = "top" }) {
 	return (
 		<Menu>
 			<MenuButton
@@ -9,9 +9,17 @@ export function SgMenu({ menuButtonX = "right", menuButtonY = "top" }) {
 				data-gfe-screenshot-exclude="true">
 				<span>🎨</span>
 			</MenuButton>
-			<MenuItems anchor="bottom">
+			<MenuItems
+				anchor="bottom end"
+				className="bg-white px-4 py-2 mt-1 flex flex-col gap-2">
 				<MenuItem>
-					<a href="/">Home</a>
+					<a href="/">Main Home</a>
+				</MenuItem>
+				<MenuItem>
+					<a href="/library">Library Home</a>
+				</MenuItem>
+				<MenuItem>
+					<a href="/library/testimonial-card">Testimonial Card</a>
 				</MenuItem>
 			</MenuItems>
 		</Menu>

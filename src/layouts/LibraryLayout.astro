@@ -1,5 +1,5 @@
 ---
-import { SgMenu } from "../components/react/SgMenu"
+import { LibraryMenu } from "../components/react/LibraryMenu"
 import BaseLayout from "./BaseLayout.astro"
 const { menuButtonX = "right", menuButtonY = "top" } = Astro.props
 ---
@@ -7,7 +7,7 @@ const { menuButtonX = "right", menuButtonY = "top" } = Astro.props
 <BaseLayout>
 	<main class="min-h-screen -bg-linear-52 from-[#D2D6DB] to-[#F9FAFB]">
 		<slot />
-		<SgMenu
+		<LibraryMenu
 			client:only="react"
 			menuButtonX={menuButtonX}
 			menuButtonY={menuButtonY}
