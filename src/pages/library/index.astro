@@ -1,19 +1,21 @@
 ---
 import LibraryLayout from "../../layouts/LibraryLayout.astro"
+import { libraryLinks } from "../../lib/library-links"
 ---
 
 <LibraryLayout>
-	<div class="py-20 max-w-7xl mx-auto">
-		<h1 class="text-7xl mb-12">Component Library</h1>
+	<div class="py-20 mx-auto max-w-7xl">
+		<h1 class="text-primary-500 mb-12 text-7xl">Component Library</h1>
 		<ul>
-			<li>
-				<a class="underline" href="/library/testimonial-card">
-					Testimonial Card
-				</a>
-			</li>
-			<li>
-				<a class="underline" href="/library/hero-simple">Hero Simple</a>
-			</li>
+			{
+				libraryLinks.map((link) => (
+					<li>
+						<a class="underline" href={`/library/${link.slug}`}>
+							{link.name}
+						</a>
+					</li>
+				))
+			}
 		</ul>
 	</div>
 </LibraryLayout>

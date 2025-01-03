@@ -1,0 +1,49 @@
+---
+import { Image } from "astro:assets"
+import logo from "../assets/img/logo.svg"
+const links = [
+	{
+		text: "Home",
+		href: "/"
+	},
+	{
+		text: "Features",
+		href: "/features"
+	},
+	{
+		text: "Pricing",
+		href: "/pricing"
+	},
+	{
+		text: "About us",
+		href: "/about"
+	},
+	{
+		text: "Contact",
+		href: "/contact"
+	}
+]
+---
+
+<header class="px-8 py-4 w-full">
+	<nav class="grid grid-cols-12 gap-8 items-center mx-auto w-full max-w-7xl">
+		<div class="col-span-2">
+			<a href="/"><Image src={logo} alt="Abstractly Logo" /></a>
+		</div>
+		<ul class="lg:flex hidden col-span-7 gap-8 items-center">
+			{
+				links.map((link) => (
+					<li>
+						<a href={link.href} class="custom-focus">
+							{link.text}
+						</a>
+					</li>
+				))
+			}
+		</ul>
+		<div class="lg:flex hidden col-span-3 gap-4 items-center">
+			<a href="#" class="btn-outline px-4 py-2 text-base">Learn more</a>
+			<a href="#" class="btn-primary px-4 py-2 text-base">See Pricing</a>
+		</div>
+	</nav>
+</header>

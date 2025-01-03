@@ -2,12 +2,43 @@
 
 @theme {
 	--font-sans: "Noto Sans", "sans-serif";
+	/* Primary is Tailwind's color-indigo */
+	--color-primary-50: oklch(0.962 0.018 272.314);
+	--color-primary-100: oklch(0.93 0.034 272.788);
+	--color-primary-200: oklch(0.87 0.065 274.039);
+	--color-primary-300: oklch(0.785 0.115 274.713);
+	--color-primary-400: oklch(0.673 0.182 276.935);
+	--color-primary-500: oklch(0.585 0.233 277.117);
+	--color-primary-600: oklch(0.511 0.262 276.966);
+	--color-primary-700: oklch(0.457 0.24 277.023);
+	--color-primary-800: oklch(0.398 0.195 277.366);
+	--color-primary-900: oklch(0.359 0.144 278.697);
+	--color-primary-950: oklch(0.257 0.09 281.288);
+
+	--color-dark: oklch(0.205 0 0); /* neutral-900 */
+	--color-muted: oklch(0.439 0 0); /* neutral-600 */
 }
 
-@utility gradient {
+@utility gradient-52 {
 	@apply -bg-linear-52 from-[#D2D6DB] to-[#F9FAFB];
+}
+
+@utility gradient-15 {
+	@apply -bg-linear-15 from-[#EDF0F3] to-[#F9FAFB];
 }
 
 @utility default-shadow {
 	@apply shadow-[0_1px_3px_rgba(0,0,0,0.1),0_1px_2px_rgba(0,0,0,0.06)];
+}
+
+@utility custom-focus {
+	@apply focus:outline-4 focus:outline-[#444CE7]/50;
+}
+
+@utility btn-primary {
+	@apply default-shadow xl:text-lg xl:py-4 xl:px-9 px-8 py-3 font-medium text-white bg-primary-700 rounded-sm hover:bg-primary-800 transition-colors border border-primary-800 custom-focus;
+}
+
+@utility btn-outline {
+	@apply border-neutral-200 text-neutral-900 default-shadow xl:text-lg xl:py-4 xl:px-9 px-8 py-3 font-medium bg-white rounded-sm border transition-colors hover:bg-neutral-50 custom-focus;
 }
