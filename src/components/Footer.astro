@@ -1,0 +1,54 @@
+---
+import { Icon } from "astro-icon/components"
+
+const siteLinks = [
+	{
+		text: "Features",
+		href: "/features"
+	},
+	{
+		text: "Pricing",
+		href: "/pricing"
+	},
+	{
+		text: "About us",
+		href: "/about"
+	},
+	{
+		text: "Contact",
+		href: "/contact"
+	}
+]
+
+const socialLinks = [
+	{ icon: "yt", href: "https://youtube.com" },
+	{ icon: "ig", href: "https://instagram.com" },
+	{ icon: "fb", href: "https://facebook.com" },
+	{ icon: "gh", href: "https://github.com" },
+	{ icon: "twitter", href: "https://twitter.com" }
+]
+---
+
+<footer class="flex flex-col items-center py-24">
+	<ul class="flex items-center gap-6 mb-8 text-muted">
+		{
+			siteLinks.map((link) => (
+				<li>
+					<a href={link.href}>{link.text}</a>
+				</li>
+			))
+		}
+	</ul>
+	<ul class="flex items-center gap-6 mb-4">
+		{
+			socialLinks.map((link) => (
+				<li>
+					<a href={link.href}>
+						<Icon class="text-xl" name={link.icon} />
+					</a>
+				</li>
+			))
+		}
+	</ul>
+	<div>© {new Date().getFullYear()} Abstractly, Inc. All rights reserved.</div>
+</footer>
