@@ -1,11 +1,15 @@
 ---
 import { LibraryMenu } from "../components/react/LibraryMenu"
 import BaseLayout from "./BaseLayout.astro"
-const { menuButtonX = "right", menuButtonY = "top" } = Astro.props
+const {
+	menuButtonX = "right",
+	menuButtonY = "top",
+	showBgGradient = "true"
+} = Astro.props
 ---
 
 <BaseLayout>
-	<main class="min-h-screen -bg-linear-52 from-[#D2D6DB] to-[#F9FAFB]">
+	<main class:list={["min-h-screen", { gradient: showBgGradient }]}>
 		<slot />
 		<LibraryMenu
 			client:only="react"
