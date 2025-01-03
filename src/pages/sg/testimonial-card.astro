@@ -1,0 +1,16 @@
+---
+import CTestimonialCard from "../../components/TestimonialCard.astro"
+import StyleGuideLayout from "../../layouts/StyleGuideLayout.astro"
+import avatar from "../../assets/img/profile-thumbnail.png"
+---
+
+<StyleGuideLayout>
+	<div class="w-full min-h-screen flex flex-col items-center justify-center">
+		<CTestimonialCard
+			name="Sarah Dole"
+			handle="sarahdole"
+			image={{ src: avatar, alt: "Sarah Dole" }}
+			quote="I've been searching for high-quality abstract images for my design projects, and I'm thrilled to have found this platform. The variety and depth of creativity are astounding!"
+		/>
+	</div>
+</StyleGuideLayout>

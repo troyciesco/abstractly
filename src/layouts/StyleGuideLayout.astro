@@ -1,0 +1,16 @@
+---
+import { SgMenu } from "../components/react/SgMenu"
+import BaseLayout from "./BaseLayout.astro"
+const { menuButtonX = "right", menuButtonY = "top" } = Astro.props
+---
+
+<BaseLayout>
+	<main class="min-h-screen -bg-linear-52 from-[#D2D6DB] to-[#F9FAFB]">
+		<slot />
+		<SgMenu
+			client:only="react"
+			menuButtonX={menuButtonX}
+			menuButtonY={menuButtonY}
+		/>
+	</main>
+</BaseLayout>
