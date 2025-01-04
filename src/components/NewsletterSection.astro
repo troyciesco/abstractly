@@ -1,1 +1,52 @@
-<div>newsletter</div>
+---
+import { Icon } from "astro-icon/components"
+import { Image } from "astro:assets"
+type Props = {
+	title: string
+	checkpoints: string[]
+	image: {
+		src: ImageMetadata
+		alt: string
+	}
+}
+
+const { title, checkpoints, image } = Astro.props
+---
+
+<section class="container py-24">
+	<div class="grid grid-cols-2 gap-8 items-center">
+		<div>
+			<h2 class="leading-12 mb-16 text-5xl font-semibold">
+				{title}
+			</h2>
+			<ul class="mb-12 space-y-5">
+				{
+					checkpoints.map((checkpoint) => (
+						<li class="text-muted flex gap-3 items-center">
+							<span class="text-primary-500 bg-primary-50 flex justify-center items-center w-6 h-6 text-sm rounded-full">
+								<Icon name="check" />
+							</span>
+							{checkpoint}
+						</li>
+					))
+				}
+			</ul>
+			<form>
+				<div class="flex gap-4 items-center w-[80%]">
+					<div class="flex flex-col w-full">
+						<input
+							class="bg-neutral-50 border-neutral-200 placeholder:text-neutral-500 grow px-4 py-2 text-sm rounded-sm border"
+							type="email"
+							placeholder="Enter your email"
+						/>
+						<!-- <span class="text-muted">We only send you the best! No spam.</span> -->
+					</div>
+					<button class="btn-primary px-4 py-2 text-sm">Subscribe</button>
+				</div>
+			</form>
+		</div>
+		<div>
+			<Image class="rounded-xl" src={image.src} alt={image.alt} />
+		</div>
+	</div>
+</section>

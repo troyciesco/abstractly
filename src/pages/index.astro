@@ -12,6 +12,9 @@ import {
 } from "../lib/features"
 import chrome from "../assets/img/chrome.jpg"
 import boxes from "../assets/img/boxes.jpg"
+import news from "../assets/img/news.jpg"
+import { newsletterSectionContent } from "../lib/newsletter-section-content"
+import NewsletterSection from "../components/NewsletterSection.astro"
 ---
 
 <MarketingLayout>
@@ -46,6 +49,11 @@ import boxes from "../assets/img/boxes.jpg"
 						alt: "white, red, blue, and yellow box stacked on each other overflowing the frame, lots of shadows",
 						side: "left"
 					}}
+				/>
+				<NewsletterSection
+					title={newsletterSectionContent.title}
+					checkpoints={newsletterSectionContent.checkpoints}
+					image={{ src: news, alt: "stack of abstrack images" }}
 				/>
 			</main>
 			<Footer />

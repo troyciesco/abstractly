@@ -1,0 +1,19 @@
+---
+import Sheet from "../../components/Sheet.astro"
+import LibraryLayout from "../../layouts/LibraryLayout.astro"
+import news from "../../assets/img/news.jpg"
+import CNewsletterSection from "../../components/NewsletterSection.astro"
+import { newsletterSectionContent } from "../../lib/newsletter-section-content"
+---
+
+<LibraryLayout>
+	<div class="flex flex-col justify-center items-center w-full min-h-screen">
+		<Sheet>
+			<CNewsletterSection
+				title={newsletterSectionContent.title}
+				checkpoints={newsletterSectionContent.checkpoints}
+				image={{ src: news, alt: "stack of abstrack images" }}
+			/>
+		</Sheet>
+	</div>
+</LibraryLayout>
