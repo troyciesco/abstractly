@@ -1,1 +1,42 @@
-<div>faq</div>
+---
+type Props = {
+	title: string
+	description: string
+	faqs: {
+		q: string
+		a: string
+	}[]
+	cta: {
+		title: string
+		description: string
+		link: {
+			href: string
+			text: string
+		}
+	}
+}
+
+const { title, description, faqs, cta } = Astro.props
+---
+
+<section class="container py-24">
+	<h2>{title}</h2>
+	<p>{description}</p>
+	<div class="space-y-8">
+		{
+			faqs.map((faq) => (
+				<div>
+					<div class="font-bold">{faq.q}</div>
+					<div>{faq.a}</div>
+				</div>
+			))
+		}
+	</div>
+	<div>
+		<div>
+			<h3>{cta.title}</h3>
+			<p>{cta.description}</p>
+		</div>
+		<a href={cta.link.href}>{cta.link.text}</a>
+	</div>
+</section>

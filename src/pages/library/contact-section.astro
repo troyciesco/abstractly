@@ -1,14 +1,20 @@
 ---
 import Sheet from "@/components/Sheet.astro"
 import LibraryLayout from "@/layouts/LibraryLayout.astro"
-import { designerFeatures } from "@/lib/features"
-import chrome from "@/assets/img/chrome.jpg"
+import CContactSection from "@/components/ContactSection.astro"
+import { contactSectionContent } from "@/lib/content"
 ---
 
 <LibraryLayout>
 	<div class="flex flex-col justify-center items-center w-full min-h-screen">
 		<Sheet>
-			<!-- <CContactSection image={src: } /> -->
+			<CContactSection
+				title={contactSectionContent.title}
+				description={contactSectionContent.description}
+				address={contactSectionContent.address}
+				phone={contactSectionContent.phone}
+				email={contactSectionContent.email}
+			/>
 		</Sheet>
 	</div>
 </LibraryLayout>

@@ -1,1 +1,23 @@
-<div>contact</div>
+---
+type Props = {
+	title: string
+	description: string
+	address: string
+	phone: string
+	email: string
+}
+
+const { title, description, address, phone, email } = Astro.props
+---
+
+<section class="container py-24">
+	<h2>{title}</h2>
+	<p>{description}</p>
+	<div>
+		<div>
+			<div>{address}</div>
+			<div>{phone}</div>
+			<div>{email}</div>
+		</div>
+	</div>
+</section>

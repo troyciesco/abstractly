@@ -15,6 +15,14 @@ import boxes from "@/assets/img/boxes.jpg"
 import news from "@/assets/img/news.jpg"
 import { newsletterSectionContent } from "@/lib/newsletter-section-content"
 import NewsletterSection from "@/components/NewsletterSection.astro"
+import {
+	contactSectionContent,
+	faqSectionContent,
+	pricingSectionContent
+} from "@/lib/content"
+import ContactSection from "@/components/ContactSection.astro"
+import FaqSection from "@/components/FaqSection.astro"
+import PricingSection from "@/components/PricingSection.astro"
 ---
 
 <MarketingLayout>
@@ -50,10 +58,29 @@ import NewsletterSection from "@/components/NewsletterSection.astro"
 						side: "left"
 					}}
 				/>
+				<PricingSection
+					eyebrow={pricingSectionContent.eyebrow}
+					title={pricingSectionContent.title}
+					description={pricingSectionContent.description}
+					plans={pricingSectionContent.plans}
+				/>
+				<FaqSection
+					title={faqSectionContent.title}
+					description={faqSectionContent.description}
+					faqs={faqSectionContent.faqs}
+					cta={faqSectionContent.cta}
+				/>
 				<NewsletterSection
 					title={newsletterSectionContent.title}
 					checkpoints={newsletterSectionContent.checkpoints}
 					image={{ src: news, alt: "stack of abstrack images" }}
+				/>
+				<ContactSection
+					title={contactSectionContent.title}
+					description={contactSectionContent.description}
+					address={contactSectionContent.address}
+					phone={contactSectionContent.phone}
+					email={contactSectionContent.email}
 				/>
 			</main>
 			<Footer />
