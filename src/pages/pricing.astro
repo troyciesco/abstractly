@@ -8,7 +8,8 @@ import MarketingLayout from "@/layouts/MarketingLayout.astro"
 import {
 	pricingSectionContent,
 	faqSectionContent,
-	contactSectionContent
+	contactSectionContent,
+	featuresPage
 } from "@/lib/content"
 import { accessFeatures } from "@/lib/features"
 ---
@@ -32,7 +33,7 @@ import { accessFeatures } from "@/lib/features"
 		description="In a world where storytelling constantly evolves, we lead with groundbreaking images designed for your presentation excellence."
 		features={accessFeatures}
 	/>
-	<TestimonialsSection />
+	<TestimonialsSection {...featuresPage.testimonialSectionContent} />
 	<ContactSection
 		title={contactSectionContent.title}
 		description={contactSectionContent.description}

@@ -26,13 +26,15 @@ const { eyebrow, title, description, image, stats, statHeading } = Astro.props
 		<div>
 			<Image src={image.src} alt={image.alt} />
 		</div>
-		<div>
-			<h3>{statHeading}</h3>
+		<div class="space-y-8">
+			<h3 class="text-lg leading-[28px] text-muted">{statHeading}</h3>
 			{
 				stats.map((stat) => (
-					<div>
-						<div>{stat.value}</div>
-						<div>{stat.label}</div>
+					<div class="p-6 w-full rounded-lg default-shadow text-center">
+						<div class="mb-4 text-primary-700 font-bold text-5xl leading-12">
+							{stat.value}
+						</div>
+						<div class="text-muted text-xl leading-[28px]">{stat.label}</div>
 					</div>
 				))
 			}
