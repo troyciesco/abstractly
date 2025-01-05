@@ -1,7 +1,61 @@
 ---
+import FeatureSection from "@/components/FeatureSection.astro"
+import Hero from "@/components/Hero.astro"
 import MarketingLayout from "@/layouts/MarketingLayout.astro"
+import {
+	accessFeatures,
+	designerFeatures,
+	convenienceFeatures
+} from "@/lib/features"
+import chrome from "@/assets/img/chrome.jpg"
+import boxes from "@/assets/img/boxes.jpg"
+import TestimonialsSection from "@/components/TestimonialsSection.astro"
+import ContactSection from "@/components/ContactSection.astro"
+import FaqSection from "@/components/FaqSection.astro"
+import { faqSectionContent, contactSectionContent } from "@/lib/content"
 ---
 
 <MarketingLayout>
-	<h1>Features</h1>
+	<Hero
+		title="Well-crafted abstract images"
+		description="High quality abstract images for your projects, wallpaper and presentations."
+	/>
+	<FeatureSection
+		eyebrow="Premium abstract images"
+		title="Easy access to top-quality images"
+		description="In a world where storytelling constantly evolves, we lead with groundbreaking images designed for your presentation excellence."
+		features={accessFeatures}
+	/>
+	<FeatureSection
+		eyebrow="High-quality images"
+		title="For designers, by designers"
+		description="Unleash boundless creativity with a large repository of images optimized for designers"
+		features={designerFeatures}
+		image={{ src: chrome, alt: "various chrome items on a grid" }}
+	/>
+	<FeatureSection
+		eyebrow="Best-in-class support"
+		title="Convenience and licensing that empowers"
+		description="In a world where storytelling constantly evolves, don't let licensing and poor support hold you down."
+		features={convenienceFeatures}
+		image={{
+			src: boxes,
+			alt: "white, red, blue, and yellow box stacked on each other overflowing the frame, lots of shadows",
+			side: "left"
+		}}
+	/>
+	<TestimonialsSection />
+	<FaqSection
+		title={faqSectionContent.title}
+		description={faqSectionContent.description}
+		faqs={faqSectionContent.faqs}
+		cta={faqSectionContent.cta}
+	/>
+	<ContactSection
+		title={contactSectionContent.title}
+		description={contactSectionContent.description}
+		address={contactSectionContent.address}
+		phone={contactSectionContent.phone}
+		email={contactSectionContent.email}
+	/>
 </MarketingLayout>

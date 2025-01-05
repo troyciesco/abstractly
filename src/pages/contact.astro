@@ -1,7 +1,22 @@
 ---
+import ContactSection from "@/components/ContactSection.astro"
+import FaqSection from "@/components/FaqSection.astro"
 import MarketingLayout from "@/layouts/MarketingLayout.astro"
+import { contactSectionContent, faqSectionContent } from "@/lib/content"
 ---
 
 <MarketingLayout>
-	<h1>Contact</h1>
+	<ContactSection
+		title={contactSectionContent.title}
+		description={contactSectionContent.description}
+		address={contactSectionContent.address}
+		phone={contactSectionContent.phone}
+		email={contactSectionContent.email}
+	/>
+	<FaqSection
+		title={faqSectionContent.title}
+		description={faqSectionContent.description}
+		faqs={faqSectionContent.faqs}
+		cta={faqSectionContent.cta}
+	/>
 </MarketingLayout>
