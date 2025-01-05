@@ -44,10 +44,34 @@ const { title, description, address, phone, email } = Astro.props
 		</div>
 		<form
 			class="p-8 bg-white border border-neutral-200 default-shadow rounded-lg">
-			<input type="text" />
-			<input type="email" />
-			<textarea name="" id=""></textarea>
-			<button>Submit</button>
+			<div class="grid grid-cols-2 items-center gap-8 mb-6">
+				<label class="flex flex-col">
+					<span class="mb-1">Name</span>
+					<input
+						type="text"
+						placeholder="Your Name"
+						class="bg-neutral-50 border-neutral-200 placeholder:text-neutral-500 px-4 py-2 text-sm rounded-sm border"
+					/>
+				</label>
+				<label class="flex flex-col">
+					<span class="mb-1">Email</span>
+					<input
+						class="bg-neutral-50 border-neutral-200 placeholder:text-neutral-500 px-4 py-2 text-sm rounded-sm border"
+						type="email"
+						placeholder="example@example.com"
+					/>
+				</label>
+			</div>
+			<label class="flex flex-col mb-10">
+				<span class="mb-1">Message</span>
+				<textarea
+					name=""
+					id=""
+					rows="5"
+					class="bg-neutral-50 border-neutral-200 placeholder:text-neutral-500 px-4 py-2 text-sm rounded-sm border"
+				></textarea>
+			</label>
+			<button class="btn-primary w-full">Submit</button>
 		</form>
 	</div>
 </section>
