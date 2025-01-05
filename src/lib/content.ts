@@ -7,6 +7,7 @@ import drice from "@/assets/img/drice.jpg"
 import mthompson from "@/assets/img/mthompson.jpg"
 import olivernever from "@/assets/img/olivernever.jpg"
 import marked from "@/assets/img/marked.jpg"
+import whiteBlocks from "@/assets/img/white-blocks.png"
 
 export const faqSectionContent = {
 	title: "Frequently asked questions",
@@ -170,6 +171,25 @@ export const featuresPage = {
 				quote:
 					"The customer support team went above and beyond to help me with a subscription issue. Their dedication to customer satisfaction is truly commendable"
 			}
+		]
+	}
+}
+
+export const aboutPage = {
+	statsSectionContent: {
+		eyebrow: "Statistics",
+		title: "More than premium abstract imagery",
+		description:
+			"Our platform is more than just as a service to us - it is a catalyst for enriching lives through premium abstract imagery.",
+		image: {
+			src: whiteBlocks,
+			alt: "four white blocks stacked abstractly on each other with a blue background barely visible"
+		},
+		statHeading: "Our mission, in numbers",
+		stats: [
+			{ value: 25664890, label: "Downloads" },
+			{ value: 17219, label: "Paid Users" },
+			{ value: 190654321, label: "Images in library" }
 		]
 	}
 }

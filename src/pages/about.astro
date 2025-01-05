@@ -5,6 +5,7 @@ import StatsSection from "@/components/StatsSection.astro"
 import TeamSection from "@/components/TeamSection.astro"
 import MarketingLayout from "@/layouts/MarketingLayout.astro"
 import { contactSectionContent } from "@/lib/content"
+import { aboutPage } from "@/lib/content"
 ---
 
 <MarketingLayout>
@@ -12,7 +13,7 @@ import { contactSectionContent } from "@/lib/content"
 		title="Well-crafted abstract images"
 		description="High quality abstract images for your projects, wallpaper and presentations."
 	/>
-	<StatsSection />
+	<StatsSection {...aboutPage.statsSectionContent} />
 	<TeamSection />
 	<ContactSection
 		title={contactSectionContent.title}
