@@ -23,10 +23,10 @@ const { eyebrow, title, description, testimonials } = Astro.props
 <section class="container py-24">
 	<SectionHeader eyebrow={eyebrow} title={title} description={description} />
 	<div
-		class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-4 lg:[grid-auto-flow:column] lg:grid-rows-3">
+		class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-4 lg:grid-rows-3">
 		{
 			testimonials.map((testimonial) => (
-				<div class="col-span-4">
+				<div class="lg:col-span-4">
 					<TestimonialCard {...testimonial} />
 				</div>
 			))
