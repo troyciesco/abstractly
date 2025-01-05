@@ -12,7 +12,12 @@ import boxes from "@/assets/img/boxes.jpg"
 import TestimonialsSection from "@/components/TestimonialsSection.astro"
 import ContactSection from "@/components/ContactSection.astro"
 import FaqSection from "@/components/FaqSection.astro"
-import { faqSectionContent, contactSectionContent } from "@/lib/content"
+import {
+	faqSectionContent,
+	contactSectionContent,
+	featuresPage
+} from "@/lib/content"
+import type { ACTION_ERROR_CODES } from "astro:actions"
 ---
 
 <MarketingLayout>
@@ -44,7 +49,7 @@ import { faqSectionContent, contactSectionContent } from "@/lib/content"
 			side: "left"
 		}}
 	/>
-	<TestimonialsSection />
+	<TestimonialsSection {...featuresPage.testimonialSectionContent} />
 	<FaqSection
 		title={faqSectionContent.title}
 		description={faqSectionContent.description}

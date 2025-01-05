@@ -1,3 +1,13 @@
+import sarahdole from "@/assets/img/sarahdole.png"
+import johnaseed from "@/assets/img/johnaseed.jpg"
+import jeniic from "@/assets/img/jeniic.jpg"
+import jakejohnshon from "@/assets/img/jakejohnshon.jpg"
+import igorstrav from "@/assets/img/igorstrav.jpg"
+import drice from "@/assets/img/drice.jpg"
+import mthompson from "@/assets/img/mthompson.jpg"
+import olivernever from "@/assets/img/olivernever.jpg"
+import marked from "@/assets/img/marked.jpg"
+
 export const faqSectionContent = {
 	title: "Frequently asked questions",
 	description: "Choose any questions you need",
@@ -88,4 +98,78 @@ export const pricingSectionContent = {
 			]
 		}
 	]
+}
+
+export const featuresPage = {
+	testimonialSectionContent: {
+		eyebrow: "Testimonials",
+		title: "Countless users, countless smiles",
+		description:
+			"Explore our community's journey and discover why satisfaction defines us.",
+		testimonials: [
+			{
+				name: "Sarah Dole",
+				handle: "sarahdole",
+				image: { src: sarahdole, alt: "Sarah Dole" },
+				quote:
+					"I've been searching for high-quality abstract images for my design projects, and I'm thrilled to have found this platform. The variety and depth of creativity are astounding!"
+			},
+			{
+				name: "John Appleseed",
+				handle: "johnaseed",
+				image: { src: johnaseed, alt: "John Appleseed" },
+				quote:
+					"As an artist, finding inspiration is crucial. This platform has become my go-to source for unique abstract images that ignite my creativity like never before."
+			},
+			{
+				name: "Jean Gray",
+				handle: "jeniic",
+				image: { src: jeniic, alt: "Jean Gray" },
+				quote:
+					"I never thought I'd find such stunning abstract images for free! This platform has exceeded my expectations in every way."
+			},
+			{
+				name: "Jake Johnson",
+				handle: "jakejohnshon",
+				image: { src: jakejohnshon, alt: "Jake Johnson" },
+				quote:
+					"From corporate presentations to personal projects, the abstract images on this platform have added a touch of elegance and sophistication to everything I create."
+			},
+			{
+				name: "Igor Stravinsky",
+				handle: "igorstrav",
+				image: { src: igorstrav, alt: "Igor Stravinsky" },
+				quote:
+					"The subscription plans are worth every penny. Having unlimited access to premium abstract images has transformed my design workflow and elevated the quality of my work"
+			},
+			{
+				name: "Declan Rice",
+				handle: "drice",
+				image: { src: drice, alt: "Declan Rice" },
+				quote:
+					"I'm amazed by the attention to detail in every image on this platform. It's clear that a lot of thought and creativity goes into curating the collection."
+			},
+			{
+				name: "Marcus Thompson",
+				handle: "mthompson",
+				image: { src: mthompson, alt: "Marcus Thompson" },
+				quote:
+					"Using abstract images from this platform has helped me convey complex concepts in a visually engaging way. My clients are always impressed!"
+			},
+			{
+				name: "Oliver Neverloved",
+				handle: "olivernever",
+				image: { src: olivernever, alt: "Oliver Neverloved" },
+				quote:
+					"I appreciate how user-friendly the platform is. Browsing, downloading, and managing my image library couldn't be easier."
+			},
+			{
+				name: "Mark Dennis",
+				handle: "marked",
+				image: { src: marked, alt: "Mark Dennis" },
+				quote:
+					"The customer support team went above and beyond to help me with a subscription issue. Their dedication to customer satisfaction is truly commendable"
+			}
+		]
+	}
 }

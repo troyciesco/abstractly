@@ -1,3 +1,35 @@
+---
+import SectionHeader from "./SectionHeader.astro"
+import TestimonialCard from "./TestimonialCard.astro"
+
+type Props = {
+	eyebrow: string
+	title: string
+	description: string
+	testimonials: {
+		name: string
+		handle: string
+		image: {
+			src: ImageMetadata
+			alt: string
+		}
+		quote: string
+	}[]
+}
+
+const { eyebrow, title, description, testimonials } = Astro.props
+---
+
 <section class="container py-24">
-	<h2>Testimonials</h2>
+	<SectionHeader eyebrow={eyebrow} title={title} description={description} />
+	<div
+		class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-4 lg:[grid-auto-flow:column] lg:grid-rows-3">
+		{
+			testimonials.map((testimonial) => (
+				<div class="col-span-4">
+					<TestimonialCard {...testimonial} />
+				</div>
+			))
+		}
+	</div>
 </section>

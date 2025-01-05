@@ -1,5 +1,6 @@
 ---
 import { Icon } from "astro-icon/components"
+import SectionHeader from "./SectionHeader.astro"
 
 type Props = {
 	eyebrow: string
@@ -20,16 +21,15 @@ const { eyebrow, title, description, plans } = Astro.props
 ---
 
 <section class="container py-24">
-	<div class="mb-16 text-center flex flex-col items-center">
-		<p class="text-primary-700 mb-3 font-semibold leading-6">{eyebrow}</p>
-		<h2 class="leading-16 mb-5 text-5xl font-semibold">{title}</h2>
-		<p class="text-xl leading-[28px] text-muted max-w-prose mx-auto mb-10">
-			{description}
-		</p>
-		<div class="flex items-center">
-			<button class="btn-outline">Monthly</button>
-			<button class="btn-outline">Annually</button>
-		</div>
+	<SectionHeader
+		eyebrow={eyebrow}
+		title={title}
+		description={description}
+		mb={10}
+	/>
+	<div class="flex items-center justify-center mb-16">
+		<button class="btn-outline">Monthly</button>
+		<button class="btn-outline">Annually</button>
 	</div>
 	<div class="grid grid-cols-3 gap-8">
 		{
