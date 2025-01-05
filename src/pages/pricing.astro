@@ -1,7 +1,43 @@
 ---
+import ContactSection from "@/components/ContactSection.astro"
+import FaqSection from "@/components/FaqSection.astro"
+import FeatureSection from "@/components/FeatureSection.astro"
+import PricingSection from "@/components/PricingSection.astro"
+import TestimonialsSection from "@/components/TestimonialsSection.astro"
 import MarketingLayout from "@/layouts/MarketingLayout.astro"
+import {
+	pricingSectionContent,
+	faqSectionContent,
+	contactSectionContent
+} from "@/lib/content"
+import { accessFeatures } from "@/lib/features"
 ---
 
 <MarketingLayout>
-	<h1>Pricing</h1>
+	<PricingSection
+		eyebrow={pricingSectionContent.eyebrow}
+		title={pricingSectionContent.title}
+		description={pricingSectionContent.description}
+		plans={pricingSectionContent.plans}
+	/>
+	<FaqSection
+		title={faqSectionContent.title}
+		description={faqSectionContent.description}
+		faqs={faqSectionContent.faqs}
+		cta={faqSectionContent.cta}
+	/>
+	<FeatureSection
+		eyebrow="Premium abstract images"
+		title="Easy access to top-quality images"
+		description="In a world where storytelling constantly evolves, we lead with groundbreaking images designed for your presentation excellence."
+		features={accessFeatures}
+	/>
+	<TestimonialsSection />
+	<ContactSection
+		title={contactSectionContent.title}
+		description={contactSectionContent.description}
+		address={contactSectionContent.address}
+		phone={contactSectionContent.phone}
+		email={contactSectionContent.email}
+	/>
 </MarketingLayout>
