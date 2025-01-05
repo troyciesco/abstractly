@@ -1,10 +1,19 @@
 ---
+import Footer from "@/components/Footer.astro"
 import BaseLayout from "./BaseLayout.astro"
+import Sheet from "@/components/Sheet.astro"
+import Navbar from "@/components/Navbar.astro"
 const { showBgGradient = "true" } = Astro.props
 ---
 
 <BaseLayout>
-	<main class:list={["min-h-screen", { ["gradient-52"]: showBgGradient }]}>
-		<slot />
-	</main>
+	<div class:list={["min-h-screen", { ["gradient-52"]: showBgGradient }]}>
+		<Navbar />
+		<Sheet>
+			<main>
+				<slot />
+			</main>
+			<Footer />
+		</Sheet>
+	</div>
 </BaseLayout>

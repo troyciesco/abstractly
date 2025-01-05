@@ -11,13 +11,24 @@ const { title, description, address, phone, email } = Astro.props
 ---
 
 <section class="container py-24">
-	<h2>{title}</h2>
-	<p>{description}</p>
-	<div>
+	<div class="grid grid-cols-2 gap-8">
 		<div>
-			<div>{address}</div>
-			<div>{phone}</div>
-			<div>{email}</div>
+			<h2>{title}</h2>
+			<p>{description}</p>
+			<div>
+				<div>
+					<div>{address}</div>
+					<div>{phone}</div>
+					<div>{email}</div>
+				</div>
+			</div>
 		</div>
+		<form
+			class="p-8 bg-white border border-neutral-200 default-shadow rounded-lg">
+			<input type="text" />
+			<input type="email" />
+			<textarea name="" id=""></textarea>
+			<button>Submit</button>
+		</form>
 	</div>
 </section>
