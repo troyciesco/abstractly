@@ -1,6 +1,6 @@
 ---
 type Props = {
-	eyebrow: string
+	eyebrow?: string
 	title: string
 	description: string
 	titleTag?: "h1" | "h2" | "h3"
@@ -11,7 +11,11 @@ const TitleElement = titleTag
 ---
 
 <div class="text-center" style={`margin-bottom: ${Math.floor(mb * 4)}px`}>
-	<p class="text-primary-700 mb-3 font-semibold leading-6">{eyebrow}</p>
+	{
+		eyebrow && (
+			<p class="text-primary-700 mb-3 font-semibold leading-6">{eyebrow}</p>
+		)
+	}
 	<TitleElement class="leading-16 mb-5 text-5xl font-semibold">
 		{title}
 	</TitleElement>

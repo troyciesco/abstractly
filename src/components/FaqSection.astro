@@ -1,4 +1,6 @@
 ---
+import SectionHeader from "./SectionHeader.astro"
+
 type Props = {
 	title: string
 	description: string
@@ -20,23 +22,108 @@ const { title, description, faqs, cta } = Astro.props
 ---
 
 <section class="container py-24">
-	<h2>{title}</h2>
-	<p>{description}</p>
-	<div class="space-y-8">
+	<SectionHeader title={title} description={description} />
+	<!-- <div class="space-y-8">
 		{
 			faqs.map((faq) => (
-				<div>
-					<div class="font-bold">{faq.q}</div>
-					<div>{faq.a}</div>
-				</div>
+				<details class="group overflow-hidden">
+					<summary class="font-bold flex justify-between items-center cursor-pointer list-none">
+						{faq.q}
+						<span class="transition-transform duration-300 group-open:rotate-180">
+							+
+						</span>
+					</summary>
+					<div class="bg-red-300 px-4 pb-4 overflow-hidden transition-all duration-300 max-h-0 group-open:max-h-64">
+						<p>{faq.a}</p>
+					</div>
+				</details>
 			))
 		}
-	</div>
-	<div>
+	</div> -->
+	{
+		faqs.map((faq) => (
+			<>
+				<details>
+					<summary>
+						<span role="term" aria-details="pure-css">
+							{faq.q}
+						</span>
+					</summary>
+				</details>
+				<div role="definition" id="pure-css" class="content">
+					<p>{faq.a}</p>
+				</div>
+			</>
+		))
+	}
+
+	<div
+		class="bg-white border border-neutral-200 rounded-lg flex items-center justify-between p-8">
 		<div>
-			<h3>{cta.title}</h3>
-			<p>{cta.description}</p>
+			<h3 class="font-semibold text-xl leading-[28px] mb-2">{cta.title}</h3>
+			<p class="text-muted leading-6">{cta.description}</p>
 		</div>
-		<a href={cta.link.href}>{cta.link.text}</a>
+		<a class="btn-primary" href={cta.link.href}>{cta.link.text}</a>
 	</div>
 </section>
+
+<!-- https://dev.to/jgustavoas/solved-how-to-fully-animate-the-details-html-element-with-only-css-and-no-javascript-55ek -->
+<style>
+	details {
+		overflow: hidden; /* Keep this line to prevent an odd blue outline around the element in Safari. */
+	}
+
+	summary {
+		display: block;
+	}
+
+	summary::-webkit-details-marker {
+		display: none;
+	}
+
+	span {
+		position: relative;
+		display: flex;
+		align-items: center;
+		padding-left: 1rem;
+
+		height: 4rem;
+	}
+
+	span:hover {
+		cursor: pointer;
+	}
+
+	span::before {
+		content: "►";
+		font-size: 1rem;
+		display: flex;
+		align-items: center;
+		margin-right: 0.5rem;
+		transition: rotate 200ms 400ms ease-out;
+	}
+
+	div.content {
+		box-sizing: border-box;
+		max-width: 500px;
+		max-height: 0;
+		overflow: hidden;
+		padding: 0 10px;
+		transition:
+			max-height 500ms ease-out,
+			border 0ms 500ms linear;
+	}
+
+	details[open] + div.content {
+		max-height: 800px; /* Set a max-height value enough to show all the content */
+		border-color: #888;
+		transition:
+			max-height 500ms ease-out,
+			border 0ms linear;
+	}
+
+	details[open] span::before {
+		rotate: 90deg;
+		transition: rotate 400ms ease-out;
+	}
+</style>
