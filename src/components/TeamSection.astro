@@ -1,3 +1,45 @@
+---
+import { Image } from "astro:assets"
+import SectionHeader from "./SectionHeader.astro"
+
+type Props = {
+	eyebrow: string
+	title: string
+	description: string
+	people: {
+		name: string
+		title: string
+		description: string
+		image: {
+			src: ImageMetadata
+			alt: string
+		}
+	}[]
+}
+
+const { eyebrow, title, description, people } = Astro.props
+---
+
 <section class="container py-24">
-	<h2>Team</h2>
+	<SectionHeader eyebrow={eyebrow} title={title} description={description} />
+	<div class="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+		{
+			people.map((person) => (
+				<div>
+					<Image
+						src={person.image.src}
+						alt={person.image.alt}
+						class="mx-auto aspect-square object-cover mb-6"
+					/>
+					<h3 class="text-xl leading-[28px] font-semibold mb-1">
+						{person.name}
+					</h3>
+					<p class="text-lg text-primary-700 font-medium mb-4">
+						{person.title}
+					</p>
+					<p class="text-muted leading-6">{person.description}</p>
+				</div>
+			))
+		}
+	</div>
 </section>

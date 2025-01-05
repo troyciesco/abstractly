@@ -8,6 +8,10 @@ import mthompson from "@/assets/img/mthompson.jpg"
 import olivernever from "@/assets/img/olivernever.jpg"
 import marked from "@/assets/img/marked.jpg"
 import whiteBlocks from "@/assets/img/white-blocks.png"
+import ash from "@/assets/img/ash.png"
+import farias from "@/assets/img/farias.png"
+import joe from "@/assets/img/joe.jpg"
+import sarah from "@/assets/img/sarah.png"
 
 export const faqSectionContent = {
 	title: "Frequently asked questions",
@@ -174,7 +178,6 @@ export const featuresPage = {
 		]
 	}
 }
-
 export const aboutPage = {
 	statsSectionContent: {
 		eyebrow: "Statistics",
@@ -190,6 +193,42 @@ export const aboutPage = {
 			{ value: 25664890, label: "Downloads" },
 			{ value: 17219, label: "Paid Users" },
 			{ value: 190654321, label: "Images in library" }
+		]
+	},
+	teamSectionContent: {
+		eyebrow: "Team",
+		title: "Meet our team",
+		description:
+			"From skilled designers to tech-savvy developers, each member brings a unique perspective and expertise to the table.",
+		people: [
+			{
+				name: "Joe Jackson",
+				title: "Founder & CEO",
+				description:
+					"Joe leads with a strategic vision for innovation and growth. With a passion for combining artistry with technology, he drives our mission to deliver cutting-edge solutions.",
+				image: { src: joe, alt: "Joe Jackson" }
+			},
+			{
+				name: "Ash Karter",
+				title: "Founder & CFO",
+				description:
+					"Ash brings financial acumen and a keen eye for detail to our operations. Her leadership ensures sustainable growth and operational excellence.",
+				image: { src: ash, alt: "Ash Karter" }
+			},
+			{
+				name: "Farias Amed",
+				title: "Front End AI Engineer",
+				description:
+					"Farias is at the forefront of AI-driven design, developing interfaces that blend intuitive usability with advanced functionality.",
+				image: { src: farias, alt: "Farias Amed" }
+			},
+			{
+				name: "Sarah Haust",
+				title: "Dev Ops",
+				description:
+					"Sarah orchestrates our development pipelines with precision, ensuring seamless deployment cycles and system reliability.",
+				image: { src: sarah, alt: "Sarah Haust" }
+			}
 		]
 	}
 }
