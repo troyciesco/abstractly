@@ -1,8 +1,15 @@
 ---
 import { Image } from "astro:assets"
 import heroImg from "@/assets/img/prism.png"
+import { Icon } from "astro-icon/components"
 
-const { title, description } = Astro.props
+type Props = {
+	title: string
+	description: string
+	variant?: "default" | "points"
+	points?: string[]
+}
+const { title, description, variant = "default", points } = Astro.props
 ---
 
 <section class="py-16 xl:max-h-[718px] w-full flex items-center">
@@ -12,10 +19,25 @@ const { title, description } = Astro.props
 				class="text-neutral-900 xl:leading-15 xl:text-6xl xl:mb-6 mb-4 text-4xl font-semibold leading-10">
 				{title}
 			</h1>
-			<p
-				class="text-lg xl:text-xl text-neutral-600 leading-[28px] mb-8 xl:mb-16">
-				{description}
-			</p>
+			{
+				variant === "default" ? (
+					<p class="text-lg xl:text-xl text-neutral-600 leading-[28px] mb-8 xl:mb-16">
+						{description}
+					</p>
+				) : (
+					<ul class="space-y-5 mb-8 xl:mb-16">
+						{points &&
+							points.map((point) => (
+								<li class="text-muted text-lg leading-[28px] flex gap-3 items-center">
+									<span class="text-primary-500 bg-primary-50 flex justify-center items-center w-6 h-6 text-sm rounded-full">
+										<Icon name="check" />
+									</span>
+									{point}
+								</li>
+							))}
+					</ul>
+				)
+			}
 			<div class="xl:gap-8 flex gap-4">
 				<a href="#" class="btn-outline"> Learn More </a>
 				<a href="#" class="btn-primary"> See Pricing </a>
