@@ -7,5 +7,6 @@ export const libraryLinks = [
 	{ name: "Feature Split", slug: "feature-split" },
 	{ name: "Newsletter Section", slug: "newsletter-section" },
 	{ name: "Contact Section", slug: "contact-section" },
-	{ name: "Pricing Section", slug: "pricing-section" }
+	{ name: "Pricing Section", slug: "pricing-section" },
+	{ name: "Profile Card", slug: "profile-card" }
 ]
